@@ -5,8 +5,8 @@ ZEROTIER_PATH="$(pwd)/data/zerotier"
 CONFIG_PATH="${ZEROTIER_PATH}/config"
 DIST_PATH="${ZEROTIER_PATH}/dist"
 ZTNCUI_PATH="${ZEROTIER_PATH}/ztncui"
-DOCKER_IMAGE_THRID="docker.mirrors.imoyuapp.win/xubiaolin/zerotier-planet:latest"
-DOCKER_IMAGE_SRC="xubiaolin/zerotier-planet:latest"
+DOCKER_IMAGE_THRID="westgoo/zerotierone:latest"
+DOCKER_IMAGE_SRC="westgoo/zerotierone:latest"
 DOCKER_IMAGE=$DOCKER_IMAGE_THRID
 print_message() {
     local message=$1
@@ -142,7 +142,7 @@ install() {
     docker rm -f ${CONTAINER_NAME} || true
     rm -rf ${ZEROTIER_PATH}
 
-    ZT_PORT=$(read_port "请输入zerotier-planet要使用的端口号，例如9994: ")
+    ZT_PORT=$(read_port "请输入zerotier-planet要使用的端口号，例如993: ")
     API_PORT=$(read_port "请输入zerotier-planet的API端口号，例如3443: ")
     FILE_PORT=$(read_port "请输入zerotier-planet的FILE端口号，例如3000: ")
 
